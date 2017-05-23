@@ -1,9 +1,11 @@
-
 const webpack = require('webpack');
+const path = require('path');
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 let config = {
-    entry: './index.js',
+    entry: './src/index.js',
     output: {
+        path: path.resolve(__dirname, './public'),
         filename: 'output.js'
     },
     module: {
@@ -15,10 +17,16 @@ let config = {
             },
             {
                 test: /\.scss$/, // files endings with .scss
-                loader: ['style-loader', 'css-loader', 'sass-loader'] // use this loader
+                use: ExtractTextWebpackPlugin.extract({ // call our plugin with extract method
+                    use: ['css-loader', 'sass-loader'], // use this loaders
+                    fallback: 'style-loader' // fallback for any CSS not extracted
+                }) // end extract
             }
-        ]
-    }
+        ] // end rules
+    },
+    plugins: [
+        new ExtractTextWebpackPlugin('style.css') // call the ExtractTextWebpackPlugin constructor and name our css file
+    ]
 };
 
 module.exports = config;
