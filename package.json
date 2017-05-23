@@ -4,7 +4,7 @@
   "description": "webpack_config",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "webpack --w"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/rNiall/webpack_config#readme",
   "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
     "webpack": "^2.6.0",
     "webpack-dev-server": "^2.4.5"
   }
