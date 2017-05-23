@@ -1,0 +1,20 @@
+{
+  "name": "webpack_config",
+  "version": "1.0.0",
+  "description": "webpack_config",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rNiall/webpack_config.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rNiall/webpack_config/issues"
+  },
+  "homepage": "https://github.com/rNiall/webpack_config#readme"
+}
