@@ -26,7 +26,14 @@ let config = {
     },
     plugins: [
         new ExtractTextWebpackPlugin('style.css') // call the ExtractTextWebpackPlugin constructor and name our css file
-    ]
+    ],
+    devServer: {
+        contentBase: path.resolve(__dirname, './public'), // A directory or URL to serve HTML content from.
+        historyApiFallback: true, // fallback to /index.html for SPA.
+        inline: true, // inline mode (set to false to disable including client scripts (like livereload)
+        open: true // open default browser while launching
+    },
+    devtool: 'eval-source-map' // enable devtool for better debugging experience
 };
 
 module.exports = config;
